@@ -1,0 +1,49 @@
+extends layout
+
+block content
+
+    script
+        include ../public/javascripts/showbalabala.js
+
+    div(class="jumbotron")
+        div(class= "conrainer")
+            h1= title
+            button(type="button" class="btn btn-primary" data-toggle="modal" data-target="#balabalaModal") 我要bala
+    table(id="bala" class="table table-hover")
+        thead
+            tr
+                th time
+                th user
+                th text
+
+        tbody(id="balalist")
+
+
+    div(class="modal fade" id="balabalaModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true")
+        div(class="modal-dialog" role="document")
+            div(class="modal-content" )
+                div(class="modal-header")
+                    h5(class="modal-title" id="exampleModalLabel") balabala
+                    button(type="button" class="close" data-dismiss="modal" aria-label="Close") <span aria-hidden="true">&times;</span>
+                div(class="modal-body")
+                    p(id="message")
+                    form
+                        div(class="form-group")
+                            | balabala
+                            input(class="form-control" type="text" id="balatext"
+                                  placeholder="less than 50 words" maxlength = '200'
+                                  minlength='2')
+                        div(id="answer")
+                div(class="modal-footer")
+                    botton(class="btn btn-secondary" data-dismiss="modal") Close
+                    botton(class="btn btn-primary" onclick="sendbala()") Send text
+
+
+
+
+
+
+
+
+
+

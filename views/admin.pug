@@ -1,0 +1,52 @@
+extends layout
+
+block content
+
+    -var userlevel = level
+    case userlevel
+        when 'guest'
+            div(class="jumbotron")
+                div(class= "conrainer")
+                    h1= title
+        default
+            div(class="jumbotron")
+                div(class= "conrainer")
+                    h1= title
+                    button(type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal") 上传新题目
+
+
+            div(class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true")
+                div(class="modal-dialog" role="document")
+                    div(class="modal-content" )
+                        div(class="modal-header")
+                            h5(class="modal-title" id="exampleModalLabel") 又出了新题目？！真是太强了
+                            button(type="button" class="close" data-dismiss="modal" aria-label="Close") <span aria-hidden="true">&times;</span>
+                        div(class="modal-body")
+                            p(id="message")
+                            form
+                                div(class="form-group")
+                                    | 题目编号:
+                                    input(class="form-control" type="text" id="newqesid")
+                                    | 题目:
+                                    input(class="form-control" type="text" id="newqestitle")
+                                    | 题目信息:
+                                    input(class="form-control" type="text" id="newqestext")
+                                    | kind:
+                                    input(class="form-control" type="text" id="newqeskind")
+                                    | flag:
+                                    input(class="form-control" type="text" id="newqesflag")
+
+                                div(id="answer")
+                        div(class="modal-footer")
+                            botton(class="btn btn-secondary" data-dismiss="modal") Close
+                            botton(class="btn btn-primary" ) Send flag
+
+
+
+
+
+
+
+
+
+

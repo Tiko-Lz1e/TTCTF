@@ -1,0 +1,31 @@
+extends layout
+
+block content
+
+    script
+        include ../public/javascripts/showranklist.js
+
+    div(class="jumbotron")
+        div(class= "conrainer")
+            h1= title
+
+    table(id="rank" class="table table-hover")
+        thead
+            tr
+                th #
+                th user
+                th point
+
+        tbody(id="ranklist")
+
+
+
+
+
+
+
+
+
+
+
+

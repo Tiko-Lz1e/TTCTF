@@ -1,0 +1,24 @@
+extends layout
+
+block content
+
+    div(class="jumbotron")
+        h1='登录TTCTF'
+        script
+            include ../public/javascripts/showlogin.js
+        div(id='login', class="container")
+            form(action="./login" method = 'POST' id = 'loginbox')
+                label(for ='uname') 学号：
+                input(type='text', name='uname', placeholder='201xxxxxxx',
+                        pattern ="201\\d{7}|admin", autocomplete= 'on',
+                        id = 'uname', class="input" aria-describedby="basic-addon1",)
+                br
+                label(for ='upass') 密码：
+                input(id = 'upass', type='password', name='upass', class ='input')
+
+                br
+                input(class="btn btn-primary btn-lg", type='submit', value='登录', style="width:100px;height:50px", role="button")
+                br
+                a(class="btn btn-link" href="./register" role="button") 没有账号？立即注册
+
+

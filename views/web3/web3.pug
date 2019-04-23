@@ -1,0 +1,18 @@
+extends ../layout
+
+block content
+
+    div(class="jumbotron")
+        //iframe(src = '/web3/web3son' id='son')
+        h1='又是一个签到系统'
+        script
+            include ../../public/javascripts/showweb3.js
+        div(id='login', class="container")
+            form(action="./sendnum" method = 'POST' id = 'loginbox')
+                label(for ='uname') 学号：
+                input(type='text', name='uname', placeholder='201xxxxxxx',
+                autocomplete='on', id='uname', class="input")
+                br
+                input(class="btn btn-primary btn-lg", onclick='sendnum()', value='签到', style="width:100px;height:50px", role="button")
+                br
+                div(id="answer")

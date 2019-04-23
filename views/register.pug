@@ -1,0 +1,32 @@
+extends layout
+
+block content
+
+    div(class="jumbotron")
+        h1='注册TTCTF'
+        script
+            include ../public/javascripts/showregister.js
+        div(id='login', class="container")
+            form(action="./register" method = 'POST' id='registerbox')
+                label(for='newuser') 用户名：
+                input(id='newuser', type='text', name='newuser', placeholder='3-20位字母数字下划线和中文搭配',
+                      pattern="(?!_)(?!.*?_$)[a-zA-Z0-9_\\u4e00-\\u9fa5]{3,20}")
+                br
+                label(for ='newnum') 学号：
+                input(id = 'newnum', type='text', name='newnum',
+                    placeholder='201xxxxxxx', pattern ="201\\d{7}")
+                br
+                label(for ='newupass') 密码：
+                input(id = 'newupass', type='password', name='newupass',
+                    placeholder='不少于5位', minlength ='5',
+                    maxlength = '64')
+                br
+                label(for ='passwordConfirmation') 确认密码：
+                input(id = 'passwordConfirmation', type='password',
+                    name='passwordConfirmation', placeholder='不少于5位',)
+                br
+                input(class="btn btn-primary btn-lg", type='submit', value='注册', style="width:100px", role="button")
+                br
+                a(class="btn btn-link" role="button" href='./login') 已有账号？立即登录
+
+
